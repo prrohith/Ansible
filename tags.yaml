@@ -1,0 +1,14 @@
+- name: tags example
+  hosts: all
+  become: no
+  gather_facts: no
+  tasks:
+    - name: task-1
+      debug:
+        msg: "I am task-1"
+      tags: dummy
+    - name: task-2
+      debug:
+        msg: "I am task-2"
+      tags: main
+

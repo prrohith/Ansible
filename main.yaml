@@ -1,0 +1,14 @@
+- name: include yaml example
+  hosts: all
+  become: no
+  gather_facts: no
+  tasks:
+    - name: non-included task
+      debug:
+        msg: "I am from the calling playbook."
+    - import_tasks: test.yaml
+      vars:
+        test: "hi"
+#   - import_tasks: test.yaml
+      
+

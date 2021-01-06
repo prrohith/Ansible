@@ -1,0 +1,8 @@
+- name: included task-1
+  debug:
+    msg: "I am from included playbook task-1"
+
+- name: included task-2
+  debug:
+    msg: "I am from included playbook task-2. My message is {{test}}"
+

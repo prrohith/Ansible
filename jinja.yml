@@ -1,0 +1,25 @@
+- name: demo jinja
+  hosts: all
+  become: no
+  gather_facts: no
+  vars:
+    text: "This is me typing the code."
+    course_name: "ANSible"
+    courses:
+      - AWS
+      - Devops
+      - Azure
+  tasks:
+    - name: lower filter
+      debug:
+        msg: "name: {{course_name|lower}}"
+    - name: replace filter
+      debug:
+        msg: "text is: {{text|replace('This is','Its')}}"
+    - name: random course
+      debug:
+        msg: "random course choosen is {{courses|random}}"
+    - name: count courses
+      debug:
+        msg: "courses count is {{courses|count}}"
+

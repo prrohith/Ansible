@@ -1,0 +1,21 @@
+- name: learning jinja filters
+  become: yes
+  hosts: all
+  tasks:
+    - name: execute a task
+      service:
+        name: tomcat
+        state: restarted
+      register: first_task_result
+    - name: only do this on change
+      debug:
+        msg: "service is changed"
+      when: first_task_result is changed
+    - name: do this when not changed
+      debug:
+        msg: "service is not changed"
+      when: first_task_result is not changed
+    - name: do this on success
+      debug:
+        msg: "first task is success"
+      when: first_task_result is success 

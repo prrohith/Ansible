@@ -1,0 +1,19 @@
+[all]
+localhost ansible_user=devops ansible_password=devops
+172.31.47.120 ansible_user=devops ansible_password=devops
+172.31.32.65 ansible_user=devops ansible_password=devops
+
+[centos]
+172.31.47.120 ansible_user=devops ansible_password=devops
+
+[ubuntu]
+localhost ansible_user=devops ansible_password=devops
+172.31.32.65 ansible_user=devops ansible_password=devops
+
+[appserver]
+172.31.47.120 ansible_user=devops ansible_password=devops
+172.31.32.65 ansible_user=devops ansible_password=devops
+
+[webserver]
+172.31.47.120 ansible_user=devops ansible_password=devops package_name=httpd php_packages='["php","php-mysql","php-fpm"]'
+172.31.32.65 ansible_user=devops ansible_password=devops package_name=apache2 php_packages='["php","libapache2-mod-php","php-mysql","php-cli"]'

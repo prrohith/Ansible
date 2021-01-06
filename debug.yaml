@@ -1,0 +1,12 @@
+- name: debug examples
+  hosts: all
+  become: yes
+  tasks:
+    - name: print variables
+      debug:
+        var: ansible_host
+        var1: ansible_port
+    - name: print values
+      debug:
+        msg: "ansible_user is : {{ansible_user}}"
+
