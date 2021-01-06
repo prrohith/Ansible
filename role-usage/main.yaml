@@ -1,0 +1,5 @@
+- name: isntall tomcat on ubuntu
+  hosts: all
+  become: yes
+  roles:
+    - role: sample
